@@ -1,0 +1,40 @@
+{
+ "actions": [],
+ "creation": "2026-11-03 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "threshold",
+  "severity"
+ ],
+ "fields": [
+  {
+   "fieldname": "threshold",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Threshold",
+   "reqd": 1,
+   "description": "The measured deviation at or above which this severity applies. Units depend on the rule."
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Severity",
+   "options": "Critical\nHigh\nMedium\nLow\nInformational",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-03 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Radar",
+ "name": "Business Radar Severity Band",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,196 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:rule_code",
+ "creation": "2026-11-03 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rule_code",
+  "rule_name",
+  "category",
+  "enabled",
+  "company",
+  "description",
+  "column_break_identity",
+  "frequency",
+  "cooldown_hours",
+  "lookback_days",
+  "min_samples",
+  "section_severity",
+  "severity_bands",
+  "section_parameters",
+  "parameters",
+  "section_status",
+  "last_run_on",
+  "last_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "rule_code",
+   "fieldtype": "Data",
+   "label": "Rule Code",
+   "reqd": 1,
+   "unique": 1,
+   "description": "Must match a rule registered in the Business Radar code registry. Rules cannot be created from arbitrary expressions."
+  },
+  {
+   "fieldname": "rule_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rule Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Financial\nSales\nInventory\nOperations",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "description": "Leave empty to evaluate the rule for every company the scheduler is allowed to process."
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_identity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Daily",
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Evaluation Frequency",
+   "options": "15 Minutes\nHourly\nDaily\nWeekly\nManual",
+   "reqd": 1
+  },
+  {
+   "default": "24",
+   "fieldname": "cooldown_hours",
+   "fieldtype": "Int",
+   "label": "Cooldown (Hours)",
+   "description": "After an alert is resolved or dismissed, the same finding is not re-raised within this period.",
+   "reqd": 1
+  },
+  {
+   "default": "90",
+   "fieldname": "lookback_days",
+   "fieldtype": "Int",
+   "label": "Lookback (Days)",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "min_samples",
+   "fieldtype": "Int",
+   "label": "Minimum Samples Override",
+   "description": "Overrides the rule's built-in minimum data requirement when higher. Zero uses the rule default."
+  },
+  {
+   "fieldname": "section_severity",
+   "fieldtype": "Section Break",
+   "label": "Severity Mapping"
+  },
+  {
+   "fieldname": "severity_bands",
+   "fieldtype": "Table",
+   "label": "Severity Bands",
+   "options": "Business Radar Severity Band"
+  },
+  {
+   "fieldname": "section_parameters",
+   "fieldtype": "Section Break",
+   "label": "Thresholds"
+  },
+  {
+   "fieldname": "parameters",
+   "fieldtype": "Table",
+   "label": "Parameters",
+   "options": "Business Radar Rule Parameter"
+  },
+  {
+   "fieldname": "section_status",
+   "fieldtype": "Section Break",
+   "label": "Last Execution"
+  },
+  {
+   "fieldname": "last_run_on",
+   "fieldtype": "Datetime",
+   "label": "Last Run On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_status",
+   "fieldtype": "Data",
+   "label": "Last Status",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-03 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Radar",
+ "name": "Business Radar Monitoring Rule",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Executive",
+   "share": 0
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Manager",
+   "share": 0
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Analyst",
+   "share": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "rule_name",
+ "track_changes": 1
+}

@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "creation": "2026-11-03 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "monitoring_enabled",
+  "ai_enabled",
+  "email_notifications_enabled",
+  "column_break_general",
+  "stale_run_timeout_minutes",
+  "max_run_retries",
+  "retention_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "default": "1",
+   "description": "Master switch for scheduled monitoring. Manual runs by administrators are still allowed.",
+   "fieldname": "monitoring_enabled",
+   "fieldtype": "Check",
+   "label": "Scheduled Monitoring Enabled"
+  },
+  {
+   "default": "0",
+   "description": "AI analysis is disabled by default. Monitoring and KPIs work without AI.",
+   "fieldname": "ai_enabled",
+   "fieldtype": "Check",
+   "label": "AI Analyst Enabled"
+  },
+  {
+   "default": "0",
+   "description": "Email notifications are disabled by default and require explicit opt-in per user.",
+   "fieldname": "email_notifications_enabled",
+   "fieldtype": "Check",
+   "label": "Email Notifications Enabled"
+  },
+  {
+   "fieldname": "column_break_general",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "30",
+   "description": "A running detection job without a heartbeat for this long is treated as stale and may be restarted.",
+   "fieldname": "stale_run_timeout_minutes",
+   "fieldtype": "Int",
+   "label": "Stale Run Timeout (Minutes)",
+   "reqd": 1
+  },
+  {
+   "default": "3",
+   "description": "Maximum automatic retries for a failed detection run.",
+   "fieldname": "max_run_retries",
+   "fieldtype": "Int",
+   "label": "Maximum Automatic Retries",
+   "reqd": 1
+  },
+  {
+   "default": "180",
+   "description": "Completed detection run records older than this are purged. Action Logs are never purged by this setting.",
+   "fieldname": "retention_days",
+   "fieldtype": "Int",
+   "label": "Detection Run Retention (Days)",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-11-03 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Radar",
+ "name": "Business Radar Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "Business Radar Administrator",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

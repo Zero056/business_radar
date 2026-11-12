@@ -1,0 +1,19 @@
+[project]
+name = "business_radar"
+authors = [
+    { name = "Hazem" }
+]
+description = "Business Radar: deterministic business monitoring, anomaly detection and decision support for Frappe / ERPNext"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dynamic = ["version"]
+dependencies = [
+    # "frappe~=15.0" # Installed and managed by bench.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.dev-dependencies]

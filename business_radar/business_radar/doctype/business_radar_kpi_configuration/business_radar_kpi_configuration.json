@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:kpi_code",
+ "creation": "2026-11-03 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "kpi_code",
+  "kpi_label",
+  "kpi_group",
+  "enabled",
+  "cache_ttl_minutes",
+  "column_break_scoring",
+  "health_weight",
+  "good_bound",
+  "bad_bound",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "kpi_code",
+   "fieldtype": "Data",
+   "label": "KPI Code",
+   "read_only": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "kpi_label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "KPI Label",
+   "read_only": 1
+  },
+  {
+   "fieldname": "kpi_group",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Group",
+   "options": "Financial\nSales\nInventory\nOperations",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "default": "60",
+   "fieldname": "cache_ttl_minutes",
+   "fieldtype": "Int",
+   "label": "Cache Time To Live (Minutes)",
+   "description": "How long a computed KPI value may be reused before it is recalculated."
+  },
+  {
+   "fieldname": "column_break_scoring",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "health_weight",
+   "fieldtype": "Float",
+   "label": "Health Score Weight",
+   "description": "Weights are normalized across all KPIs used by the Business Health Score. Zero excludes the KPI from the score."
+  },
+  {
+   "fieldname": "good_bound",
+   "fieldtype": "Float",
+   "label": "Good Bound",
+   "description": "Value that maps to a sub-score of 100."
+  },
+  {
+   "fieldname": "bad_bound",
+   "fieldtype": "Float",
+   "label": "Bad Bound",
+   "description": "Value that maps to a sub-score of 0."
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-03 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Business Radar",
+ "name": "Business Radar KPI Configuration",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Administrator",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Executive",
+   "share": 0
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Manager",
+   "share": 0
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Analyst",
+   "share": 0
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Radar Viewer",
+   "share": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "kpi_label",
+ "track_changes": 1
+}
