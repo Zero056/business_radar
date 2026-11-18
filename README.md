@@ -12,3 +12,4 @@ Status: **Phase 1 (Foundation) in progress.** Not production-ready.
 
 Design principles: ERPNext is the source of truth; AI is optional and never the
 source of facts; every query is permission-aware; every action is whitelisted and audited.
+# business_radar
